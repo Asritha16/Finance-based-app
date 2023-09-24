@@ -1,0 +1,46 @@
+<!-- index.html -->
+<html>
+<head>
+    <title>Simple Personal Finance App</title>
+    <h1>Budget Plannning Financial App</h1>
+    
+    <link rel="stylesheet" href="../static/styleindex.css">
+    <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico')}}">
+</head>
+<body>
+    <div>
+    <div>
+    <table border="1.5">
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>usage</th>
+        </tr>
+        {% for transaction in transactions %}
+        <tr>
+            <td>{{ transaction[0] }}</td>
+            <td>{{ transaction[1] }}</td>
+            <td>{{ transaction[2] }}</td>
+            <td>{{ transaction[3] }}</td>
+            <td>{{ transaction[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+
+    <p>Total Income: {{ total_income }}<br>
+      <br>Total Expense: {{ total_expense }}<br>
+       <br>Your Savings:{{ total_savings }}<br>
+       <br>Your Balance:{{balance}}</p>
+    
+    <div class="div_1">
+        <p><a href="/add">Click Here For Adding New Transaction</a></p>
+    </div>
+    <div class="div_2">
+        <p>Check Your Monthly/Yearly Transactions</p>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- add.html -->
+<html>
+<head>
+    <title>Add New Transaction</title>
+    <link rel="stylesheet" href="../static/styleadd.css">
+</head>
+<body style="background-color: azure;">
+    <div>
+    <h1>Add New Transaction</h1>
+    <form action="/add" method="POST">
+        <p>Type: <select name="type">
+            <option value="Income">Income</option>
+            <option value="Expense">Expense</option>
+            <option value="Savings">Savings</option>
+            
+        </select></p>
+        <p>Spent For:<input type="text" name="usage"></p>
+        <p>Amount: <input type="number" name="amount" step="1"></p>
+        <p>Date: <input type="date" name="date"></p>
+        <p><input type="submit" value="Add"></p>
+    </form>
+    </div>
+</body>
+</html>
